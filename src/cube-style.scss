@@ -2,9 +2,9 @@ body {
   background: #f8ffe5;
 }
 .perspective {
-  perspective: 228em;
-  perspective-origin: 50% 150px;
-  width: 1482px;
+  perspective: 152em;
+  perspective-origin: 50% 100px;
+  width: 988px;
   margin: 0 auto;
   font-family: "Roboto", sans-serif;
   font-weight: 100;
@@ -16,60 +16,60 @@ input {
 }
 .tab {
   position: absolute;
-  width: 240px;
-  height: 210px;
+  width: 160px;
+  height: 140px;
   background: pink;
   right: 0;
-  line-height: 210px;
+  line-height: 140px;
   font-weight: 300;
 
   &:nth-child(1) {
-    top: -15px;
+    top: -10px;
     background: #06d6a0;
   }
   &:nth-child(2) {
-    top: 207px;
+    top: 138px;
     background: #1b9aaa;
   }
   &:nth-child(3) {
-    top: 429px;
+    top: 286px;
     background: #ef476f;
   }
 }
 
 .cube {
   position: relative;
-  margin: 180px auto 0;
-  width: 900px;
-  height: 600px;
-  transform-origin: 0 300px;
+  margin: 120px auto 0;
+  width: 600px;
+  height: 400px;
+  transform-origin: 0 200px;
   transform-style: preserve-3d;
   transition: transform 0.5s ease-in;
 }
 .tab-content {
-  width: 900px;
-  height: 600px;
+  width: 600px;
+  height: 400px;
   position: absolute;
 
   h1 {
     font-size: 25px;
-    margin: 225px 0 10px;
+    margin: 150px 0 10px;
     font-weight: 300;
   }
   p {
     font-size: 12px;
   }
   &:nth-child(2) {
-    transform: translateZ(300px);
+    transform: translateZ(200px);
     background: #1b9aaa;
   }
   &:nth-child(1) {
-    transform: rotateX(-270deg) translateY(-300px);
+    transform: rotateX(-270deg) translateY(-200px);
     transform-origin: top left;
     background: #06d6a0;
   }
   &:nth-child(3) {
-    transform: rotateX(-90deg) translateY(300px);
+    transform: rotateX(-90deg) translateY(200px);
     transform-origin: bottom center;
     background: #ef476f;
   }

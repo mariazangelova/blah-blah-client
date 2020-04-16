@@ -1,7 +1,7 @@
 import React from "react";
 import "../cube-style.scss";
 
-export default function HomePage() {
+export default function WordStory() {
   return (
     <div class="perspective">
       <label class="tab" for="tab-top">
