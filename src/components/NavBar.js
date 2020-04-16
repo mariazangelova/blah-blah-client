@@ -7,7 +7,7 @@ export default function NavBar() {
     <nav role="navigation" className="sidenav">
       <div>
         <NavLink to="/" exact to="/">
-          HOME
+          HOW TO
         </NavLink>
       </div>
       <div>
