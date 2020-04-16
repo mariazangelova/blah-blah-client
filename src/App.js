@@ -3,6 +3,8 @@ import { Switch, Route } from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/HomePage";
 import NavBar from "./components/NavBar";
+import WordStory from "./pages/WordStory";
+import PictureStory from "./pages/PictureStory";
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route path="/story-word" component={WordStory} />
+        <Route path="/story-picture" component={PictureStory} />
       </Switch>
     </div>
   );

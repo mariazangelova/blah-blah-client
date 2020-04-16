@@ -1,5 +1,6 @@
 import React from "react";
 import "../cube-style.scss";
+import SignUp from "../components/SignUp";
 
 export default function HomePage() {
   return (
@@ -27,8 +28,11 @@ export default function HomePage() {
           <p>THIS IS COOL</p>
         </div>
         <div class="tab-content">
-          <h1>BOTTOM CONTENT</h1>
-          <p>THIS IS SWEET</p>
+          <SignUp />
+          <div class="form">
+            {" "}
+            <input type="text" />
+          </div>
         </div>
       </div>
     </div>
