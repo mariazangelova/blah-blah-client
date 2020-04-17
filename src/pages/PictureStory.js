@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import SpeechRecognition from "../components/SpeechRecognition";
-// import Word from "../components/Word";
+import SpeechRecognition from "../components/SpeechRecognitionPicture";
 import "../cube-style.scss";
 import { fetchPicture } from "../store/picture/actions";
 import {

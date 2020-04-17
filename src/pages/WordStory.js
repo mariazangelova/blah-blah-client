@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import SpeechRecognition from "../components/SpeechRecognition";
-// import Word from "../components/Word";
 import "../cube-style.scss";
 import { fetchRandomWord, fetchSynomyms } from "../store/word/actions";
 import { selectRandomWord, selectDefinition } from "../store/word/selectors";
@@ -14,7 +13,7 @@ export default function WordStory() {
   }, [dispatch]);
   const randomWord = useSelector(selectRandomWord);
   const definition = useSelector(selectDefinition);
-
+  console.log("recording", recording);
   return (
     <div class="perspective">
       <label class="tab" for="tab-top">
@@ -54,7 +53,6 @@ export default function WordStory() {
                   </div>
                 )
               }
-              className="button"
             >
               START RECORDING
             </button>
