@@ -8,12 +8,15 @@ const propTypes = {
   // Props injected by SpeechRecognition
   transcript: PropTypes.string,
   resetTranscript: PropTypes.func,
+  startListening: PropTypes.func,
+  stopListening: PropTypes.func,
   browserSupportsSpeechRecognition: PropTypes.bool,
 };
 
 const Dictaphone = ({
   transcript,
   resetTranscript,
+  stopListening,
   browserSupportsSpeechRecognition,
 }) => {
   if (!browserSupportsSpeechRecognition) {
@@ -23,10 +26,13 @@ const Dictaphone = ({
   //const story = transcript.split(" ");
   return (
     <div className="center">
-      {/* <button variant="dark" onClick={resetTranscript}>
+      {/* <button onClick={resetTranscript}>
         Delete
       </button> */}
       <p>{transcript}</p>
+      <button className="stop-button" onClick={stopListening}>
+        STOP
+      </button>
     </div>
   );
 };
