@@ -58,6 +58,12 @@ input {
     margin: 150px 0 10px;
     font-weight: 100;
   }
+  h2 {
+    font-size: 32px;
+    margin: 150px 0 10px;
+    margin-bottom: 50px;
+    font-weight: 100;
+  }
   p {
     font-size: 22px;
     color: black;
@@ -100,6 +106,21 @@ input {
 }
 .button:hover {
   background-color: #bb2e4f;
+}
+
+.stop-button {
+  background-color: #1b9aaa;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+.stop-button:hover {
+  background-color: #127380;
 }
 
 .form {

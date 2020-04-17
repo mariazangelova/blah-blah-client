@@ -47,8 +47,9 @@ export default function WordStory() {
           <p>{definition}</p>
         </div>
         <div class="tab-content">
-          <h1>{randomWord}</h1>
-          {recording === null ? (
+          <h2>{randomWord}</h2>
+          <br />
+          {recording === null && definition ? (
             <button
               className="button"
               onClick={() =>
