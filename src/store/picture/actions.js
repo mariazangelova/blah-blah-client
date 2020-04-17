@@ -7,6 +7,10 @@ export const randomPicture = (picture) => ({
   type: "RANDOM_PICTURE",
   payload: picture,
 });
+export const pictureDescription = (description) => ({
+  type: "DESCRIPTION",
+  payload: description,
+});
 
 export const fetchPicture = () => {
   return async (dispatch, getState) => {
@@ -15,8 +19,10 @@ export const fetchPicture = () => {
         .getRandomPhoto()
         .then(toJson)
         .then((json) => {
+          console.log("picture", json);
           const picture = json.urls.small;
           dispatch(randomPicture(picture));
+          dispatch(pictureDescription(json.alt_description));
         });
     } catch (error) {
       console.log(error);
