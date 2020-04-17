@@ -3,14 +3,19 @@ import { useSelector, useDispatch } from "react-redux";
 import SpeechRecognition from "../components/SpeechRecognition";
 // import Word from "../components/Word";
 import "../cube-style.scss";
+import { fetchPicture } from "../store/picture/actions";
+import { selectPicture } from "../store/picture/selectors";
 
 export default function PictureStory() {
   const [recording, setRecording] = useState(null);
   const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch;
-  // }, [dispatch]);
-
+  useEffect(() => {
+    dispatch(fetchPicture());
+  }, [dispatch]);
+  // const randomPicture = useSelector(selectPicture);
+  // console.log("picture", randomPicture);
+  const randomPicture =
+    "https://images.unsplash.com/photo-1587050265310-1a2d98ccce5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80";
   return (
     <div class="perspective">
       <label class="tab" for="tab-top">
@@ -48,7 +53,7 @@ export default function PictureStory() {
           <p>{definition}</p> */}
         </div>
         <div class="tab-content">
-          {/* <h2>{randomPicture}</h2> */}
+          <img src={randomPicture} style={{ width: "30%", margin: "20px" }} />
           <br />
           {recording === null ? (
             <button
