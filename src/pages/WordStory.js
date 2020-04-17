@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import SpeechRecognition from "../components/SpeechRecognition";
 // import Word from "../components/Word";
 import "../cube-style.scss";
-import { fetchRandomWord, fetchSynomyms } from "../store/actions";
-import { selectRandomWord, selectDefinition } from "../store/selectors";
+import { fetchRandomWord, fetchSynomyms } from "../store/word/actions";
+import { selectRandomWord, selectDefinition } from "../store/word/selectors";
 
 export default function WordStory() {
   const [recording, setRecording] = useState(null);

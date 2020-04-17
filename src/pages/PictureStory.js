@@ -1,11 +1,15 @@
-import React, { useState } from "react";
-//import { useSelector } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import SpeechRecognition from "../components/SpeechRecognition";
 // import Word from "../components/Word";
 import "../cube-style.scss";
 
 export default function PictureStory() {
   const [recording, setRecording] = useState(null);
+  const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch;
+  // }, [dispatch]);
 
   return (
     <div class="perspective">
@@ -40,11 +44,12 @@ export default function PictureStory() {
 
       <div class="cube">
         <div class="tab-content">
-          <h1>TOP CONTENT</h1>
-          <p>THIS IS AWESOME</p>
+          {/* <h1>DEFINITION</h1>
+          <p>{definition}</p> */}
         </div>
         <div class="tab-content">
-          <h1>WORD</h1>
+          {/* <h2>{randomPicture}</h2> */}
+          <br />
           {recording === null ? (
             <button
               className="button"
@@ -57,7 +62,7 @@ export default function PictureStory() {
               }
               className="button"
             >
-              BEGIN A STORY
+              START RECORDING
             </button>
           ) : null}
         </div>
