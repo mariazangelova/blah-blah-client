@@ -1,11 +1,19 @@
-import React, { useState } from "react";
-//import { useSelector } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import SpeechRecognition from "../components/SpeechRecognition";
 // import Word from "../components/Word";
 import "../cube-style.scss";
+import { fetchRandomWord, fetchSynomyms } from "../store/actions";
+import { selectRandomWord, selectDefinition } from "../store/selectors";
 
 export default function WordStory() {
   const [recording, setRecording] = useState(null);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchRandomWord());
+  }, [dispatch]);
+  const randomWord = useSelector(selectRandomWord);
+  const definition = useSelector(selectDefinition);
 
   return (
     <div class="perspective">
@@ -35,11 +43,11 @@ export default function WordStory() {
 
       <div class="cube">
         <div class="tab-content">
-          <h1>TOP CONTENT</h1>
-          <p>THIS IS AWESOME</p>
+          <h1>DEFINITION</h1>
+          <p>{definition}</p>
         </div>
         <div class="tab-content">
-          <h1>WORD</h1>
+          <h1>{randomWord}</h1>
           {recording === null ? (
             <button
               className="button"
@@ -52,7 +60,7 @@ export default function WordStory() {
               }
               className="button"
             >
-              BEGIN A STORY
+              START RECORDING
             </button>
           ) : null}
         </div>
