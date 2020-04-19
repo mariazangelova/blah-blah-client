@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { sendMessage } from "../store/chat/chat";
+import "../index.scss";
 class Chat extends Component {
   render() {
     const { feed, sendMessage } = this.props;
     return (
-      <div>
+      <div class="chat">
         <h1>Blah Blah Chat</h1>
         <ul>
           {feed.map((entry) => (
