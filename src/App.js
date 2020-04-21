@@ -5,6 +5,8 @@ import HomePage from "./pages/HomePage";
 import NavBar from "./components/NavBar";
 import WordStory from "./pages/WordStory";
 import PictureStory from "./pages/PictureStory";
+import Chat from "./components/ChatApp";
+//import "milligram";
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
         <Route path="/story-word" component={WordStory} />
         <Route path="/story-picture" component={PictureStory} />
       </Switch>
+      <Chat />
     </div>
   );
 }

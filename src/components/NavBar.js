@@ -14,7 +14,10 @@ export default function NavBar() {
         <NavLink to="/story-word">WORD STORY</NavLink>
       </div>
       <div>
-        <NavLink to="/story-picture">PICTURE STORY</NavLink>
+        <NavLink to="/story-picture">PICTURE</NavLink>
+      </div>
+      <div>
+        <NavLink to="/upload-picture">UPLAOD</NavLink>
       </div>
     </nav>
   );

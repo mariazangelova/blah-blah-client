@@ -1,7 +1,5 @@
 import { ApiAiClient } from "api-ai-javascript";
 const accessToken = process.env.REACT_APP_DIALOGFLOW_TOKEN;
-console.log(process.env);
-console.log(accessToken);
 const client = new ApiAiClient({ accessToken });
 
 export const ON_MESSAGE = "ON_MESSAGE";
