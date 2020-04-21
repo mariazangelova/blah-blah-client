@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import SpeechRecognition from "../components/SpeechRecognitionPicture";
 import "../cube-style.scss";
+import UploadImage from "../components/UploadImage";
 
-export default function UploadImage() {
+export default function UploadPicture() {
   const [recording, setRecording] = useState(null);
   // const dispatch = useDispatch();
   // useEffect(() => {
@@ -44,6 +45,7 @@ export default function UploadImage() {
           )} */}
         </div>
         <div class="tab-content">
+          <UploadImage />
           <img style={{ width: "30%", margin: "20px", borderRadius: "8px" }} />
           <br />
           {recording === null ? (
