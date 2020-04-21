@@ -1,5 +1,4 @@
 import { ApiAiClient } from "api-ai-javascript";
-import { applyMiddleware, createStore } from "redux";
 const accessToken = "3993130924cf4cdb9606a4e1625f63b4";
 const client = new ApiAiClient({ accessToken });
 
