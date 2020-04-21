@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
-//import App from "./App";
+import App from "./App";
 import Chat from "./components/ChatApp";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -12,7 +12,7 @@ import "milligram";
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <Chat />
+      <App />
     </Router>
   </Provider>,
   document.getElementById("root")

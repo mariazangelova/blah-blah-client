@@ -1,6 +1,5 @@
 import { ApiAiClient } from "api-ai-javascript";
-const accessToken =
-  process.env.REACT_APP_DIALOGFLOW_TOKEN || "3993130924cf4cdb9606a4e1625f63b4";
+const accessToken = process.env.REACT_APP_DIALOGFLOW_TOKEN;
 console.log(process.env);
 console.log(accessToken);
 const client = new ApiAiClient({ accessToken });
