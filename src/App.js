@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import WordStory from "./pages/WordStory";
 import PictureStory from "./pages/PictureStory";
 import Chat from "./components/ChatApp";
+import UploadImage from "./components/UploadImage";
 //import "milligram";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/" component={HomePage} />
         <Route path="/story-word" component={WordStory} />
         <Route path="/story-picture" component={PictureStory} />
+        <Route path="/upload-picture" component={UploadImage} />
       </Switch>
       <Chat />
     </div>
