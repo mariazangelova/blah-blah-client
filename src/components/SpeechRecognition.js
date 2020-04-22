@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 //import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
@@ -19,25 +19,28 @@ const Dictaphone = ({
   transcript,
   resetTranscript,
   finalTranscript,
+  startListening,
   stopListening,
   browserSupportsSpeechRecognition,
 }) => {
   const dispatch = useDispatch();
+  const [newStory, setStory] = useState(true);
   if (!browserSupportsSpeechRecognition) {
     return null;
   }
+  if (newStory === true) {
+    startListening();
+  }
   const stopRecording = () => {
-    stopListening();
+    setStory(false);
     const story = finalTranscript.split(" ");
     resetTranscript();
+    stopListening();
     dispatch(storeStory(story));
     console.log("STORY", story);
   };
   return (
     <div className="center">
-      {/* <button onClick={resetTranscript}>
-        Delete
-      </button> */}
       <p>{transcript}</p>
       <button className="stop-button" onClick={stopRecording}>
         STOP
