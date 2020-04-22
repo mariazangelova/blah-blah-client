@@ -4,7 +4,6 @@ import { sendMessage } from "../store/chat/chat";
 import "../index.scss";
 class Chat extends Component {
   render() {
-    console.log("PROPS", this.props);
     const { feed, sendMessage } = this.props;
     return (
       <div class="chat">

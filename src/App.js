@@ -6,7 +6,7 @@ import NavBar from "./components/NavBar";
 import WordStory from "./pages/WordStory";
 import PictureStory from "./pages/PictureStory";
 import UploadPicture from "./pages/UploadPicture";
-import Chat from "./components/ChatApp";
+import Chat from "./components/Chat";
 import chatbot from "./chatbot.png";
 //import "milligram";
 
@@ -24,7 +24,11 @@ function App() {
       </Switch>
       <div>
         <button class="chat-button" onClick={() => setChat(!chat)}>
-          <img style={{ width: "20%" }} src={chatbot} alt="chatbot" />
+          <img
+            style={{ width: "20%", marginTop: "20px" }}
+            src={chatbot}
+            alt="chatbot"
+          />
         </button>
         {chat === true ? <Chat /> : null}
       </div>
