@@ -1,7 +1,9 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 //import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import SpeechRecognition from "react-speech-recognition";
+import { storeStory } from "../store/story/actions";
 
 const propTypes = {
   // Props injected by SpeechRecognition
@@ -20,6 +22,7 @@ const Dictaphone = ({
   stopListening,
   browserSupportsSpeechRecognition,
 }) => {
+  const dispatch = useDispatch();
   if (!browserSupportsSpeechRecognition) {
     return null;
   }
@@ -27,8 +30,8 @@ const Dictaphone = ({
     stopListening();
     const story = finalTranscript.split(" ");
     resetTranscript();
+    dispatch(storeStory(story));
     console.log("STORY", story);
-    console.log("TRANSCRIPT", transcript);
   };
   return (
     <div className="center">
