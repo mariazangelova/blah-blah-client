@@ -17,7 +17,15 @@ export default function NavBar() {
         <NavLink to="/story-picture">PICTURE</NavLink>
       </div>
       <div>
-        <NavLink to="/upload-picture">UPLAOD</NavLink>
+        <NavLink to="/upload-picture">UPLOAD</NavLink>
+      </div>
+      <div>
+        <button style={{ background: "none", border: "none" }}>
+          <img
+            class="image"
+            src="https://cdn2.iconfinder.com/data/icons/chat-bot-linear-outline/300/215815814Untitled-3-512.png"
+          />
+        </button>
       </div>
     </nav>
   );
