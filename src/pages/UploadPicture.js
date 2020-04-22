@@ -3,9 +3,11 @@ import { useSelector, useDispatch } from "react-redux";
 import SpeechRecognitionUpload from "../components/SpeechRecognitionUpload";
 import "../cube-style.scss";
 import UploadImage from "../components/UploadImage";
+import { selectPictureLabels } from "../store/picture/selectors";
 
 export default function UploadPicture() {
   const [recording, setRecording] = useState(null);
+  const labels = useSelector(selectPictureLabels);
   // const dispatch = useDispatch();
   // useEffect(() => {
   // }, [dispatch]);
@@ -37,12 +39,10 @@ export default function UploadPicture() {
 
       <div class="cube">
         <div class="tab-content">
-          <h1>DESCRIPTION</h1>
-          {/* {description === null ? (
-            <p>Sorry, this image has no description.</p>
-          ) : (
-            <p>{description}</p>
-          )} */}
+          <h1>LABELS</h1>
+          {labels.map((label) => (
+            <div>{label}</div>
+          ))}
         </div>
         <div class="tab-content">
           <UploadImage />
