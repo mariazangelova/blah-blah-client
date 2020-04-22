@@ -19,7 +19,9 @@ export default function NavBar() {
       <div>
         <NavLink to="/upload-picture">UPLOAD</NavLink>
       </div>
-      <div></div>
+      <div>
+        <NavLink to="/review">REVIEW</NavLink>
+      </div>
     </nav>
   );
 }

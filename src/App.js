@@ -8,6 +8,7 @@ import PictureStory from "./pages/PictureStory";
 import UploadPicture from "./pages/UploadPicture";
 import Chat from "./components/Chat";
 import chatbot from "./chatbot.png";
+import Review from "./pages/Review";
 //import "milligram";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/story-word" component={WordStory} />
         <Route path="/story-picture" component={PictureStory} />
         <Route path="/upload-picture" component={UploadPicture} />
+        <Route path="/review" component={Review} />
       </Switch>
       <div style={{ display: "flex" }}>
         <button class="chat-button" onClick={() => setChat(!chat)}>
