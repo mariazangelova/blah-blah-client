@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import SpeechRecognition from "../components/SpeechRecognitionPicture";
+import SpeechRecognitionUpload from "../components/SpeechRecognitionUpload";
 import "../cube-style.scss";
 import UploadImage from "../components/UploadImage";
 
@@ -54,7 +54,7 @@ export default function UploadPicture() {
               onClick={() =>
                 setRecording(
                   <div>
-                    <SpeechRecognition />
+                    <SpeechRecognitionUpload />
                   </div>
                 )
               }
@@ -66,7 +66,7 @@ export default function UploadPicture() {
         </div>
         <div class="tab-content">
           <h1>RECORDING</h1>
-          <p>{recording}</p>
+          <div>{recording}</div>
         </div>
       </div>
     </div>

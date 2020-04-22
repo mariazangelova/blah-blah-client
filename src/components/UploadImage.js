@@ -1,11 +1,13 @@
 import React from "react";
+import { connect } from "react-redux";
 import ImageUploader from "react-images-upload";
 import { Image } from "cloudinary-react";
 import axios from "axios";
+import { getLabels } from "../store/picture/actions";
 import "../index.scss";
 const url = "https://api.cloudinary.com/v1_1/ddag7qg0v/image/upload";
 
-export default class UploadImage extends React.Component {
+class UploadImage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -21,10 +23,11 @@ export default class UploadImage extends React.Component {
     axios
       .post(url, body)
       .then((result) => {
-        console.log(result);
+        console.log("result in axios.then", result);
         const image = result.data;
         this.setState(image);
-        console.log(this.state);
+        console.log(image);
+        this.props.getLabels(image.url);
       })
       .catch((err) => {
         console.log(err);
@@ -68,3 +71,15 @@ export default class UploadImage extends React.Component {
     );
   }
 }
+
+// const mapStateToProps = (state) => {
+//   return {
+//     token: state.session.token
+//   }
+// }
+
+const mapDispatchToProps = {
+  getLabels,
+};
+
+export default connect(null, mapDispatchToProps)(UploadImage);

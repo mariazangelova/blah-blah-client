@@ -1,4 +1,4 @@
-const initialState = { randomPicture: null, description: null, labels: null };
+const initialState = { randomPicture: null, description: null, labels: [] };
 
 export default (state = initialState, action) => {
   switch (action.type) {

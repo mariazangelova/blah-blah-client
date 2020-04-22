@@ -75,7 +75,7 @@ export default function PictureStory() {
         </div>
         <div class="tab-content">
           <h1>RECORDING</h1>
-          <p>{recording}</p>
+          <div>{recording}</div>
         </div>
       </div>
     </div>
