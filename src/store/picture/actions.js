@@ -39,11 +39,13 @@ export const fetchPicture = () => {
 export const getLabels = (imageUrl) => {
   return async (dispatch, getState) => {
     try {
-      console.log("PICTURE", imageUrl);
+      //console.log("PICTURE", imageUrl);
       const response = await axios.post(`${apiUrl}/google-vision`, {
         imageUrl,
       });
-      console.log("RESPONSE", response);
+      const labels = response.data.map((label) => label.description);
+      console.log("labels", labels);
+      dispatch(pictureLabels(labels));
     } catch (error) {
       console.log(error);
     }

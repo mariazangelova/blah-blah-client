@@ -22,7 +22,7 @@ function App() {
         <Route path="/story-picture" component={PictureStory} />
         <Route path="/upload-picture" component={UploadPicture} />
       </Switch>
-      <div>
+      <div style={{ display: "flex" }}>
         <button class="chat-button" onClick={() => setChat(!chat)}>
           <img
             style={{ width: "20%", marginTop: "20px" }}
