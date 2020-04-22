@@ -33,7 +33,7 @@ const Dictaphone = ({
   }
   const stopRecording = () => {
     setStory(false);
-    const story = finalTranscript.split(" ");
+    const story = finalTranscript;
     resetTranscript();
     stopListening();
     dispatch(storeStory(story));

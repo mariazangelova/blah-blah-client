@@ -1,7 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import "../cube-style.scss";
+import WordCounter from "../components/WordCounter";
+import { selectStory } from "../store/story/selectors";
 
 export default function Review() {
+  const story = useSelector(selectStory);
   return (
     <div className="perspective">
       <label class="tab" htmlFor="tab-top">
@@ -32,6 +36,8 @@ export default function Review() {
         </div>
         <div class="tab-content">
           <h1 style={{ margin: "30px" }}>REVIEW</h1>
+          <p>{story}</p>
+          <WordCounter />
         </div>
         <div class="tab-content">
           <h1>RECORDING</h1>

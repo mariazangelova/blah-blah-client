@@ -1,19 +1,21 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { selectStoryArray } from "../store/story/selectors";
 
 export default function WordCounter() {
-  const story = [];
+  const story = useSelector(selectStoryArray);
   let mf = 1;
   let m = 0;
   let item;
   for (let i = 0; i < story.length; i++) {
     if (
-      arr1[i] === "the" ||
-      arr1[i] === "and" ||
-      arr1[i] === "a" ||
-      arr1[i] === "which" ||
-      arr1[i] === "that" ||
-      arr1[i] === "this" ||
-      arr1[i] === "but"
+      story[i] === "the" ||
+      story[i] === "and" ||
+      story[i] === "a" ||
+      story[i] === "which" ||
+      story[i] === "that" ||
+      story[i] === "this" ||
+      story[i] === "but"
     ) {
       continue;
     }
@@ -28,5 +30,11 @@ export default function WordCounter() {
     m = 0;
   }
   console.log(`${item} ( ${mf} times ) `);
-  return <div></div>;
+  return (
+    <div>
+      <p>
+        {item} was repeated {mf} times
+      </p>
+    </div>
+  );
 }
