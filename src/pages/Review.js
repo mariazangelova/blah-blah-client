@@ -3,9 +3,11 @@ import { useSelector } from "react-redux";
 import "../cube-style.scss";
 import WordCounter from "../components/WordCounter";
 import { selectStory } from "../store/story/selectors";
+import { selectSynonyms } from "../store/word/selectors";
 
 export default function Review() {
   const story = useSelector(selectStory);
+  const synonyms = useSelector(selectSynonyms);
   return (
     <div className="perspective">
       <label class="tab" htmlFor="tab-top">
@@ -38,6 +40,16 @@ export default function Review() {
           <h1 style={{ margin: "30px" }}>REVIEW</h1>
           <p>{story}</p>
           <WordCounter />
+          {synonyms ? (
+            <p>
+              synonyms:{" "}
+              {synonyms.map((synonym) => (
+                <span>{synonym} - </span>
+              ))}
+            </p>
+          ) : (
+            <p>Sorry, no synonyms were found for this word.</p>
+          )}
         </div>
         <div class="tab-content">
           <h1>RECORDING</h1>

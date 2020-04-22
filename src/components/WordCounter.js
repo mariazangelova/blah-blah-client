@@ -1,12 +1,14 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { selectStoryArray } from "../store/story/selectors";
+import { fetchSynomyms } from "../store/word/actions";
 
 export default function WordCounter() {
+  const dispatch = useDispatch();
   const story = useSelector(selectStoryArray);
   let mf = 1;
   let m = 0;
-  let item;
+  let word;
   for (let i = 0; i < story.length; i++) {
     if (
       story[i] === "the" ||
@@ -15,7 +17,11 @@ export default function WordCounter() {
       story[i] === "which" ||
       story[i] === "that" ||
       story[i] === "this" ||
-      story[i] === "but"
+      story[i] === "but" ||
+      story[i] === "is" ||
+      story[i] === "are" ||
+      story[i] === "you" ||
+      story[i] === "she"
     ) {
       continue;
     }
@@ -23,17 +29,20 @@ export default function WordCounter() {
       if (story[i] === story[j]) m++;
       if (mf < m) {
         mf = m;
-        item = story[i];
+        word = story[i];
       }
     }
 
     m = 0;
   }
-  console.log(`${item} ( ${mf} times ) `);
+  console.log(`${word} ( ${mf} times ) `);
+  useEffect(() => {
+    dispatch(fetchSynomyms(word));
+  }, [dispatch]);
   return (
     <div>
       <p>
-        {item} was repeated {mf} times
+        <b>{word}</b> was repeated {mf} times
       </p>
     </div>
   );
