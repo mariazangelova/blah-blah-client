@@ -1,22 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import SpeechRecognition from "../components/SpeechRecognition";
 import "../cube-style.scss";
 import UploadImage from "../components/UploadImage";
 import { selectLabels } from "../store/picture/selectors";
 import { selectStoryArray } from "../store/story/selectors";
+import { selectNewStory } from "../store/story/selectors";
+import { newStory } from "../store/story/actions";
 
 export default function UploadPicture() {
   const [recording, setRecording] = useState(null);
   const labels = useSelector(selectLabels);
   const speech = useSelector(selectStoryArray);
-  //console.log("speech", speech);
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  // }, [dispatch]);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(newStory());
+  }, [dispatch]);
   //const match = speech.some((r) => labels.includes(r));
   const match = speech.filter((word) => labels.includes(word));
+  const isNew = useSelector(selectNewStory);
 
   return (
     <div className="perspective">
@@ -74,7 +77,7 @@ export default function UploadPicture() {
           ) : null}
         </div>
         <div className="tab-content">
-          {speech.length > 1 ? (
+          {isNew === false ? (
             <div>
               <h1 style={{ margin: "50px" }}>WORDS GUESSED:</h1>
               {match.map((word, index) => (

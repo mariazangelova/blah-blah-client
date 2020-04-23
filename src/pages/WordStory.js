@@ -5,18 +5,21 @@ import SpeechRecognition from "../components/SpeechRecognition";
 import "../cube-style.scss";
 import { fetchRandomWord } from "../store/word/actions";
 import { selectRandomWord, selectDefinition } from "../store/word/selectors";
-import { selectStoryArray } from "../store/story/selectors";
+import { selectNewStory } from "../store/story/selectors";
+import { newStory } from "../store/story/actions";
+//import { selectStoryArray } from "../store/story/selectors";
 
 export default function WordStory() {
   const [recording, setRecording] = useState(null);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchRandomWord());
+    dispatch(newStory());
   }, [dispatch]);
   const randomWord = useSelector(selectRandomWord);
   const definition = useSelector(selectDefinition);
-  const speech = useSelector(selectStoryArray);
-
+  //const speech = useSelector(selectStoryArray);
+  const isNew = useSelector(selectNewStory);
   //console.log("recording", recording);
   return (
     <div className="perspective">
@@ -65,16 +68,16 @@ export default function WordStory() {
           ) : null}
         </div>
         <div className="tab-content">
-          {speech.length > 1 ? (
-            <div>
-              <Link to="/review">
-                <button className="button-review">REVIEW</button>
-              </Link>
-            </div>
-          ) : (
+          {isNew === true ? (
             <div>
               <h1 style={{ margin: "50px" }}>RECORDING</h1>
               <div>{recording}</div>
+            </div>
+          ) : (
+            <div style={{ margin: "40px" }}>
+              <Link to="/review">
+                <button className="button-review">REVIEW</button>
+              </Link>
             </div>
           )}
         </div>

@@ -36,8 +36,8 @@ export default function Review() {
           {synonyms && synonyms.length > 1 ? (
             <p>
               synonyms:{" "}
-              {synonyms.map((synonym) => (
-                <span>{synonym} - </span>
+              {synonyms.map((synonym, index) => (
+                <span key={index}>{synonym} - </span>
               ))}
             </p>
           ) : (

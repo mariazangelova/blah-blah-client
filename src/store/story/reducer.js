@@ -1,9 +1,11 @@
-const initialState = "";
+const initialState = { speech: "", newStory: true };
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case "STORY":
-      return action.payload;
+      return { speech: action.payload, newStory: false };
+    case "NEW_STORY":
+      return { ...state, newStory: true };
     default:
       return state;
   }

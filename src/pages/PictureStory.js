@@ -8,17 +8,21 @@ import {
   selectPicture,
   selectPictureDescription,
 } from "../store/picture/selectors";
-import { selectStoryArray } from "../store/story/selectors";
+//import { selectStoryArray } from "../store/story/selectors";
+import { newStory } from "../store/story/actions";
+import { selectNewStory } from "../store/story/selectors";
 
 export default function PictureStory() {
   const [recording, setRecording] = useState(null);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchPicture());
+    dispatch(newStory());
   }, [dispatch]);
   const randomPicture = useSelector(selectPicture);
   const description = useSelector(selectPictureDescription);
-  const speech = useSelector(selectStoryArray);
+  //const speech = useSelector(selectStoryArray);
+  const isNew = useSelector(selectNewStory);
 
   return (
     <div className="perspective">
@@ -80,16 +84,16 @@ export default function PictureStory() {
           ) : null}
         </div>
         <div className="tab-content">
-          {speech.length > 1 ? (
-            <div>
-              <Link to="/review">
-                <button className="button-review">REVIEW</button>
-              </Link>
-            </div>
-          ) : (
+          {isNew === true ? (
             <div>
               <h1 style={{ margin: "50px" }}>RECORDING</h1>
               <div>{recording}</div>
+            </div>
+          ) : (
+            <div style={{ margin: "40px" }}>
+              <Link to="/review">
+                <button className="button-review">REVIEW</button>
+              </Link>
             </div>
           )}
         </div>
