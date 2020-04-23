@@ -28,7 +28,7 @@ function App() {
         <Route path="/review" component={Review} />
       </Switch>
       <div style={{ height: "125px" }}>
-        <button class="chat-button" onClick={() => setChat(!chat)}>
+        <button className="chat-button" onClick={() => setChat(!chat)}>
           <img
             style={{ width: "20%", marginTop: "20px" }}
             src={chatbot}

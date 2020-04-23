@@ -19,21 +19,21 @@ export default function WordStory() {
 
   //console.log("recording", recording);
   return (
-    <div class="perspective">
-      <label class="tab" for="tab-top">
+    <div className="perspective">
+      <label className="tab" for="tab-top">
         <img
           src={`https://cdn4.iconfinder.com/data/icons/basic-flat-ui-extra-set-200-item/76/ui_ux_minimalist_button_hint_idea_innovation-512.png`}
-          class="image"
+          className="image"
           alt="top"
         />
       </label>
-      <label class="tab" for="tab-front">
+      <label className="tab" for="tab-front">
         WORD
       </label>
-      <label class="tab" for="tab-bottom">
+      <label className="tab" for="tab-bottom">
         <img
           src={`https://cdn0.iconfinder.com/data/icons/music-and-media-player-ui-s94/96/Music_Icon_Pack_-_Outline_ab_microphone-512.png`}
-          class="image"
+          className="image"
           alt="bottom"
         />
       </label>
@@ -41,12 +41,12 @@ export default function WordStory() {
       <input type="radio" name="tabs" id="tab-front" />
       <input type="radio" name="tabs" id="tab-bottom" />
 
-      <div class="cube">
-        <div class="tab-content">
+      <div className="cube">
+        <div className="tab-content">
           <h1>DEFINITION</h1>
           <p>{definition}</p>
         </div>
-        <div class="tab-content">
+        <div className="tab-content">
           <h2>{randomWord}</h2>
           <br />
           {recording === null && definition ? (
@@ -64,7 +64,7 @@ export default function WordStory() {
             </button>
           ) : null}
         </div>
-        <div class="tab-content">
+        <div className="tab-content">
           {speech.length > 1 ? (
             <div>
               <Link to="/review">

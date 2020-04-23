@@ -6,7 +6,7 @@ class Chat extends Component {
   render() {
     const { feed, sendMessage } = this.props;
     return (
-      <div class="chat">
+      <div className="chat">
         <h1>Blah Blah Chat</h1>
         <ul>
           {feed.chat.map((entry, index) => (
