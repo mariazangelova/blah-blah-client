@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import SpeechRecognition from "../components/SpeechRecognition";
 import "../cube-style.scss";
 import { fetchPicture } from "../store/picture/actions";
@@ -7,6 +8,7 @@ import {
   selectPicture,
   selectPictureDescription,
 } from "../store/picture/selectors";
+import { selectStoryArray } from "../store/story/selectors";
 
 export default function PictureStory() {
   const [recording, setRecording] = useState(null);
@@ -16,6 +18,7 @@ export default function PictureStory() {
   }, [dispatch]);
   const randomPicture = useSelector(selectPicture);
   const description = useSelector(selectPictureDescription);
+  const speech = useSelector(selectStoryArray);
 
   return (
     <div class="perspective">
@@ -77,8 +80,18 @@ export default function PictureStory() {
           ) : null}
         </div>
         <div class="tab-content">
-          <h1>RECORDING</h1>
-          <div>{recording}</div>
+          {speech.length > 1 ? (
+            <div>
+              <Link to="/review">
+                <button className="button-review">REVIEW</button>
+              </Link>
+            </div>
+          ) : (
+            <div>
+              <h1 style={{ margin: "50px" }}>RECORDING</h1>
+              <div>{recording}</div>
+            </div>
+          )}
         </div>
       </div>
     </div>

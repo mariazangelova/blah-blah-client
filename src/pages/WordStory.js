@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import SpeechRecognition from "../components/SpeechRecognition";
 import "../cube-style.scss";
 import { fetchRandomWord, fetchSynomyms } from "../store/word/actions";
 import { selectRandomWord, selectDefinition } from "../store/word/selectors";
+import { selectStoryArray } from "../store/story/selectors";
 
 export default function WordStory() {
   const [recording, setRecording] = useState(null);
@@ -13,7 +15,9 @@ export default function WordStory() {
   }, [dispatch]);
   const randomWord = useSelector(selectRandomWord);
   const definition = useSelector(selectDefinition);
-  console.log("recording", recording);
+  const speech = useSelector(selectStoryArray);
+
+  //console.log("recording", recording);
   return (
     <div class="perspective">
       <label class="tab" for="tab-top">
@@ -59,8 +63,18 @@ export default function WordStory() {
           ) : null}
         </div>
         <div class="tab-content">
-          <h1>RECORDING</h1>
-          <p>{recording}</p>
+          {speech.length > 1 ? (
+            <div>
+              <Link to="/review">
+                <button className="button-review">REVIEW</button>
+              </Link>
+            </div>
+          ) : (
+            <div>
+              <h1 style={{ margin: "50px" }}>RECORDING</h1>
+              <div>{recording}</div>
+            </div>
+          )}
         </div>
       </div>
     </div>

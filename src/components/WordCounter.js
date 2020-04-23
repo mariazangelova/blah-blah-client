@@ -41,9 +41,13 @@ export default function WordCounter() {
   }, [dispatch]);
   return (
     <div>
-      <p>
-        <b>{word}</b> was repeated {mf} times
-      </p>
+      {word === undefined ? (
+        <p>You did not repeat any words, well done!</p>
+      ) : (
+        <p>
+          <b>{word}</b> was repeated {mf} times
+        </p>
+      )}
     </div>
   );
 }

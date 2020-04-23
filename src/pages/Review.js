@@ -33,7 +33,7 @@ export default function Review() {
         <div class="tab-content">
           <h1 style={{ margin: "50px" }}>HINT</h1>
           <WordCounter />
-          {synonyms ? (
+          {synonyms.length > 1 ? (
             <p>
               synonyms:{" "}
               {synonyms.map((synonym) => (
@@ -41,7 +41,7 @@ export default function Review() {
               ))}
             </p>
           ) : (
-            <p>Sorry, no synonyms were found for this word.</p>
+            <p>No synonyms for unrepeated words nor weird ones.</p>
           )}
         </div>
         <div class="tab-content">

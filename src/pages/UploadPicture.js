@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import SpeechRecognition from "../components/SpeechRecognition";
 import "../cube-style.scss";
 import UploadImage from "../components/UploadImage";
@@ -10,6 +11,7 @@ export default function UploadPicture() {
   const [recording, setRecording] = useState(null);
   const labels = useSelector(selectLabels);
   const speech = useSelector(selectStoryArray);
+  //console.log("speech", speech);
   // const dispatch = useDispatch();
   // useEffect(() => {
   // }, [dispatch]);
@@ -72,9 +74,9 @@ export default function UploadPicture() {
           ) : null}
         </div>
         <div class="tab-content">
-          {match.length > 0 ? (
+          {speech.length > 1 ? (
             <div>
-              <h1 style={{ margin: "50px" }}>Words guessed:</h1>
+              <h1 style={{ margin: "50px" }}>WORDS GUESSED:</h1>
               {match.map((word, index) => (
                 <div
                   key={index}
@@ -83,11 +85,16 @@ export default function UploadPicture() {
                   {word}
                 </div>
               ))}
+              <Link to="/review">
+                <button className="button-review">REVIEW</button>
+              </Link>
             </div>
           ) : (
-            <h1 style={{ margin: "50px" }}>RECORDING</h1>
+            <div>
+              <h1 style={{ margin: "50px" }}>RECORDING</h1>
+              <div>{recording}</div>
+            </div>
           )}
-          <div>{recording}</div>
         </div>
       </div>
     </div>
