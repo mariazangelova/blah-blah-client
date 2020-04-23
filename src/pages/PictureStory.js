@@ -7,6 +7,7 @@ import { fetchPicture } from "../store/picture/actions";
 import {
   selectPicture,
   selectPictureDescription,
+  selectPictureLabels,
 } from "../store/picture/selectors";
 //import { selectStoryArray } from "../store/story/selectors";
 import { newStory } from "../store/story/actions";
@@ -23,6 +24,7 @@ export default function PictureStory() {
   const description = useSelector(selectPictureDescription);
   //const speech = useSelector(selectStoryArray);
   const isNew = useSelector(selectNewStory);
+  const labels = useSelector(selectPictureLabels);
 
   return (
     <div className="perspective">
@@ -54,11 +56,21 @@ export default function PictureStory() {
 
       <div className="cube">
         <div className="tab-content">
-          <h1>DESCRIPTION</h1>
+          <h1 style={{ margin: "20px" }}>DESCRIPTION</h1>
           {description === null ? (
             <p>Sorry, this image has no description.</p>
           ) : (
             <p>{description}</p>
+          )}
+          <h1 style={{ margin: "20px" }}>LABELS</h1>
+          {labels ? (
+            labels.map((label, index) => (
+              <div key={index} style={{ color: "black", margin: "5px" }}>
+                {label}
+              </div>
+            ))
+          ) : (
+            <p>loading...</p>
           )}
         </div>
         <div className="tab-content">

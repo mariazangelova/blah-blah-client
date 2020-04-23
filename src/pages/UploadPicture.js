@@ -52,11 +52,15 @@ export default function UploadPicture() {
       <div className="cube">
         <div className="tab-content">
           <h1 style={{ margin: "50px" }}>LABELS</h1>
-          {labels.map((label, index) => (
-            <div key={index} style={{ color: "black", margin: "5px" }}>
-              {label}
-            </div>
-          ))}
+          {labels ? (
+            labels.map((label, index) => (
+              <div key={index} style={{ color: "black", margin: "5px" }}>
+                {label}
+              </div>
+            ))
+          ) : (
+            <p>loading...</p>
+          )}
         </div>
         <div className="tab-content">
           <UploadImage />
