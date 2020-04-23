@@ -41,7 +41,7 @@ export default function Review() {
               ))}
             </p>
           ) : (
-            <p>No synonyms for unrepeated words nor weird ones.</p>
+            <p>No hints, sorry!</p>
           )}
         </div>
         <div className="tab-content">
