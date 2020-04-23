@@ -38,7 +38,7 @@ export default function WordCounter() {
   console.log(`${word} ( ${mf} times ) `);
   useEffect(() => {
     dispatch(fetchSynomyms(word));
-  }, [dispatch]);
+  }, [dispatch, word]);
   return (
     <div>
       {word === undefined ? (

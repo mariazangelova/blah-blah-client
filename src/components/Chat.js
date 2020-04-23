@@ -9,8 +9,8 @@ class Chat extends Component {
       <div class="chat">
         <h1>Blah Blah Chat</h1>
         <ul>
-          {feed.chat.map((entry) => (
-            <li>{entry.text}</li>
+          {feed.chat.map((entry, index) => (
+            <li key={index}>{entry.text}</li>
           ))}
         </ul>
         <input

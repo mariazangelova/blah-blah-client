@@ -1,12 +1,3 @@
 .App {
   text-align: center;
 }
-.chat-button {
-  background: none;
-  position: relative;
-  border: none;
-  cursor: pointer;
-}
-button:focus {
-  outline: 0;
-}

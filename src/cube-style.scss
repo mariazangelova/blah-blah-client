@@ -123,8 +123,9 @@ input {
   background-color: #127380;
 }
 .button-review {
-  background-color: #06d6a0;
+  background-color: #1b9aaa;
   border: none;
+  color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -132,8 +133,8 @@ input {
   font-size: 16px;
   cursor: pointer;
 }
-.button-review:hover {
-  background-color: #049971;
+.button:hover {
+  background-color: #127380;
 }
 
 .form {

@@ -22,6 +22,8 @@
   display: block;
 }
 .chat {
+  position: absolute;
+  offset: bottom;
   color: #fff;
   background: #06d6a0;
   padding-left: 0;
@@ -48,4 +50,14 @@
 .image-uploader {
   z-index: 1;
   background: #06d6a0;
+}
+.chat-button {
+  margin: 40px;
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+button:focus {
+  outline: 0;
 }

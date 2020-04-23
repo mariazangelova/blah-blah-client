@@ -18,6 +18,7 @@ function App() {
     <div className="App">
       <header></header>
       <NavBar />
+
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/how-to" component={HowTo} />
@@ -26,7 +27,7 @@ function App() {
         <Route path="/upload-picture" component={UploadPicture} />
         <Route path="/review" component={Review} />
       </Switch>
-      <div style={{ display: "flex" }}>
+      <div style={{ height: "125px" }}>
         <button class="chat-button" onClick={() => setChat(!chat)}>
           <img
             style={{ width: "20%", marginTop: "20px" }}
