@@ -77,6 +77,7 @@ export default function PictureStory() {
           <img
             src={randomPicture}
             alt="random"
+            samesite="none"
             style={{ width: "30%", margin: "20px", borderRadius: "8px" }}
           />
           <br />
