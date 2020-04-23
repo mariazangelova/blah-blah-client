@@ -33,12 +33,7 @@ export default function Review() {
 
       <div class="cube">
         <div class="tab-content">
-          <h1>DEFINITION OR DESCRIPTION</h1>
-          <p>I am here to help.</p>
-        </div>
-        <div class="tab-content">
-          <h1 style={{ margin: "30px" }}>REVIEW</h1>
-          <p>{story}</p>
+          <h1 style={{ margin: "50px" }}>HINT</h1>
           <WordCounter />
           {synonyms ? (
             <p>
@@ -52,8 +47,15 @@ export default function Review() {
           )}
         </div>
         <div class="tab-content">
-          <h1>RECORDING</h1>
-          <p>recordings</p>
+          <h1 style={{ margin: "50px" }}>REVIEW</h1>
+          <p>If you want to see the transcription of the recording,</p>
+          <p> click on the microphone.</p>
+          <p>If you want to get some hints about your speech, </p>
+          <p> go to the lightbulb.</p>
+        </div>
+        <div class="tab-content">
+          <h1 style={{ margin: "50px" }}>TRANSCRIPTION</h1>
+          <p>{story}</p>
         </div>
       </div>
     </div>
