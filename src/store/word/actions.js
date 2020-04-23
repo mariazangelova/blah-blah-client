@@ -1,4 +1,3 @@
-import { selectRandomWord } from "./selectors";
 const axios = require("axios");
 
 export const randomWord = (word) => ({
@@ -28,7 +27,7 @@ export const fetchRandomWord = () => {
         if (response.data.results === undefined) {
           dispatch(fetchRandomWord());
         }
-        console.log("result", response.data.results);
+        //console.log("result", response.data.results);
         console.log(response.data);
         dispatch(randomWord(response.data.word));
         dispatch(wordHints(response.data.results[0]));
@@ -46,7 +45,7 @@ export const wordSynonyms = (synonyms) => ({
 
 export const fetchSynomyms = (word) => {
   return async (dispatch, getState) => {
-    console.log("word", word);
+    //console.log("word", word);
     axios({
       method: "GET",
       url: `https://wordsapiv1.p.rapidapi.com/words/${word}/synonyms`,

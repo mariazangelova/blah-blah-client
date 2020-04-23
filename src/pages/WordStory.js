@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import SpeechRecognition from "../components/SpeechRecognition";
 import "../cube-style.scss";
-import { fetchRandomWord, fetchSynomyms } from "../store/word/actions";
+import { fetchRandomWord } from "../store/word/actions";
 import { selectRandomWord, selectDefinition } from "../store/word/selectors";
 import { selectStoryArray } from "../store/story/selectors";
 
@@ -24,6 +24,7 @@ export default function WordStory() {
         <img
           src={`https://cdn4.iconfinder.com/data/icons/basic-flat-ui-extra-set-200-item/76/ui_ux_minimalist_button_hint_idea_innovation-512.png`}
           class="image"
+          alt="top"
         />
       </label>
       <label class="tab" for="tab-front">
@@ -33,6 +34,7 @@ export default function WordStory() {
         <img
           src={`https://cdn0.iconfinder.com/data/icons/music-and-media-player-ui-s94/96/Music_Icon_Pack_-_Outline_ab_microphone-512.png`}
           class="image"
+          alt="bottom"
         />
       </label>
       <input type="radio" name="tabs" id="tab-top" />

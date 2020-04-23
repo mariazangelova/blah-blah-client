@@ -23,10 +23,10 @@ class UploadImage extends React.Component {
     axios
       .post(url, body)
       .then((result) => {
-        console.log("result in axios.then", result);
+        //console.log("result in axios.then", result);
         const image = result.data;
         this.setState(image);
-        console.log(image);
+        //console.log(image);
         this.props.getLabels(image.url);
       })
       .catch((err) => {

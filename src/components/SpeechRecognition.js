@@ -37,7 +37,7 @@ const Dictaphone = ({
     resetTranscript();
     stopListening();
     dispatch(storeStory(story));
-    console.log("STORY", story);
+    //console.log("STORY", story);
   };
   return (
     <div className="center">
