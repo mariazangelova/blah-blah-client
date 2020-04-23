@@ -42,17 +42,15 @@ export default function UploadPicture() {
 
       <div class="cube">
         <div class="tab-content">
-          <h1>LABELS</h1>
+          <h1 style={{ margin: "50px" }}>LABELS</h1>
           {labels.map((label, index) => (
-            <div key={index}>{label}</div>
+            <div key={index} style={{ color: "black", margin: "5px" }}>
+              {label}
+            </div>
           ))}
         </div>
         <div class="tab-content">
           <UploadImage />
-          <img
-            style={{ width: "30%", margin: "20px", borderRadius: "8px" }}
-            alt="upload"
-          />
           <br />
           {recording === null ? (
             <button

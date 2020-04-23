@@ -17,9 +17,7 @@ export default function Review() {
           alt="top"
         />
       </label>
-      <label class="tab" htmlFor="tab-front">
-        MY WORDS
-      </label>
+      <label class="tab" htmlFor="tab-front"></label>
       <label class="tab" htmlFor="tab-bottom">
         <img
           src={`https://cdn0.iconfinder.com/data/icons/music-and-media-player-ui-s94/96/Music_Icon_Pack_-_Outline_ab_microphone-512.png`}
