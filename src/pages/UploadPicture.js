@@ -3,14 +3,18 @@ import { useSelector, useDispatch } from "react-redux";
 import SpeechRecognition from "../components/SpeechRecognition";
 import "../cube-style.scss";
 import UploadImage from "../components/UploadImage";
-import { selectPictureLabels } from "../store/picture/selectors";
+import { selectLabels } from "../store/picture/selectors";
+import { selectStoryArray } from "../store/story/selectors";
 
 export default function UploadPicture() {
   const [recording, setRecording] = useState(null);
-  const labels = useSelector(selectPictureLabels);
+  const labels = useSelector(selectLabels);
+  const speech = useSelector(selectStoryArray);
   // const dispatch = useDispatch();
   // useEffect(() => {
   // }, [dispatch]);
+  //const match = speech.some((r) => labels.includes(r));
+  const match = speech.filter((word) => labels.includes(word));
 
   return (
     <div class="perspective">
@@ -68,7 +72,21 @@ export default function UploadPicture() {
           ) : null}
         </div>
         <div class="tab-content">
-          <h1>RECORDING</h1>
+          {match.length > 0 ? (
+            <div>
+              <h1 style={{ margin: "50px" }}>Words guessed:</h1>
+              {match.map((word, index) => (
+                <div
+                  key={index}
+                  style={{ color: "black", margin: "5px", fontSize: "20px" }}
+                >
+                  {word}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <h1 style={{ margin: "50px" }}>RECORDING</h1>
+          )}
           <div>{recording}</div>
         </div>
       </div>
