@@ -1,7 +1,7 @@
 import React from "react";
 import "../cube-style.scss";
 
-export default function HomePage() {
+export default function HowTo() {
   return (
     <div className="perspective">
       <label class="tab" htmlFor="tab-top">
@@ -19,9 +19,9 @@ export default function HomePage() {
           alt="bottom"
         />
       </label>
-      <input name="tabs" id="tab-top" />
+      <input type="radio" name="tabs" id="tab-top" />
       <input type="radio" name="tabs" id="tab-front" />
-      <input name="tabs" id="tab-bottom" />
+      <input type="radio" name="tabs" id="tab-bottom" />
 
       <div class="cube">
         <div class="tab-content">
@@ -29,11 +29,13 @@ export default function HomePage() {
           <p>I am here to help.</p>
         </div>
         <div class="tab-content">
-          <h2 style={{ margin: "30px" }}>WELCOME TO BLAH BLAH CUBE</h2>
-          <h1 style={{ margin: "50px" }}>Here you can:</h1>
-          <p>Pracitce English speaking</p>
-          <p>Practice creative story telling</p>
-          <p>Have fun!</p>
+          <h1 style={{ margin: "30px" }}>HOW TO BLAH BLAH CUBE</h1>
+          <p>Click on WORD, PICTURE or UPLOAD on the left.</p>
+          <p>A random word or picture will then appear.</p>
+          <p>Take a moment to think about it.</p>
+          <p>If you need help, click on the green hint box.</p>
+          <p>When ready, click on the START RECORDING button.</p>
+          <p>See your words in the pink recording box.</p>
         </div>
         <div class="tab-content">
           <h1>RECORDING</h1>

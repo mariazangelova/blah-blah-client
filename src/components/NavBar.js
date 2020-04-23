@@ -7,11 +7,14 @@ export default function NavBar() {
     <nav role="navigation" className="sidenav">
       <div>
         <NavLink to="/" exact>
-          HOW TO
+          HELLO
         </NavLink>
       </div>
       <div>
-        <NavLink to="/story-word">WORD STORY</NavLink>
+        <NavLink to="/how-to">HOW TO</NavLink>
+      </div>
+      <div>
+        <NavLink to="/story-word">WORD</NavLink>
       </div>
       <div>
         <NavLink to="/story-picture">PICTURE</NavLink>

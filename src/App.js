@@ -9,6 +9,7 @@ import UploadPicture from "./pages/UploadPicture";
 import Chat from "./components/Chat";
 import chatbot from "./chatbot.png";
 import Review from "./pages/Review";
+import HowTo from "./pages/HowTo";
 //import "milligram";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route path="/how-to" component={HowTo} />
         <Route path="/story-word" component={WordStory} />
         <Route path="/story-picture" component={PictureStory} />
         <Route path="/upload-picture" component={UploadPicture} />
