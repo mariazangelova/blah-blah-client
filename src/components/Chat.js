@@ -3,8 +3,16 @@ import { connect } from "react-redux";
 import { sendMessage } from "../store/chat/chat";
 import "../index.scss";
 class Chat extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: "" };
+  }
   render() {
     const { feed, sendMessage } = this.props;
+    const handleEnter = (e) => {
+      sendMessage(this.state.value);
+      this.setState({ value: "" });
+    };
     return (
       <div className="chat">
         <h1>Blah Blah Chat</h1>
@@ -15,9 +23,9 @@ class Chat extends Component {
         </ul>
         <input
           type="text"
-          onKeyDown={(e) =>
-            e.keyCode === 13 ? sendMessage(e.target.value) : null
-          }
+          value={this.state.value}
+          onChange={(e) => this.setState({ value: e.target.value })}
+          onKeyDown={(e) => (e.keyCode === 13 ? handleEnter(e) : null)}
         />
       </div>
     );
