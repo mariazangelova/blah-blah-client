@@ -31,8 +31,8 @@ export default function HomePage() {
         <div className="tab-content">
           <h2 style={{ margin: "30px" }}>WELCOME TO BLAH BLAH CUBE</h2>
           <h1 style={{ margin: "50px" }}>Here you can:</h1>
-          <p>Pracitce English speaking</p>
-          <p>Practice creative story telling</p>
+          <p>Practise English speaking</p>
+          <p>Practise creative story telling</p>
           <p>Have fun!</p>
         </div>
         <div className="tab-content">
