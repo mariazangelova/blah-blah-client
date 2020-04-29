@@ -11,8 +11,11 @@ The app has the following three features using speech recognition:
 ## Technology
 
 [React Speech Recognition](https://github.com/mariazangelova/blah-blah-client/blob/master/src/components/SpeechRecognition.js)
+
 [Google Vision API](https://github.com/mariazangelova/blah-blah-server/blob/master/index.js) - This is linked to the server repo.
+
 [React Images Upload](https://github.com/mariazangelova/blah-blah-client/blob/master/src/components/UploadImage.js)
+
 [Dialogflow ChatBot](https://github.com/mariazangelova/blah-blah-client/blob/master/src/components/Chat.js)
 
 ## Server-repo
