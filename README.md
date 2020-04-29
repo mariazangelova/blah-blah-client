@@ -1,5 +1,7 @@
 # What is blah blah cube
 
+[See the deployed version](https://blah-blah-cube.netlify.app/)
+
 The app has the following three features using speech recognition:
 
 1. Word story - a random word is fetched from WordsAPI. The user can see the definition of the word if it is unfamiliar. Then the recording can begin. The story is up to the user - anything related to the given word. Transcription is provided along with the most repeated word and relevant synonyms.
