@@ -28,6 +28,7 @@ function App() {
         <Route path="/review" component={Review} />
       </Switch>
       <div style={{ height: "125px" }}>
+        {chat === true ? <Chat /> : null}
         <button className="chat-button" onClick={() => setChat(!chat)}>
           <img
             style={{ width: "20%", marginTop: "20px" }}
@@ -35,7 +36,6 @@ function App() {
             alt="chatbot"
           />
         </button>
-        {chat === true ? <Chat /> : null}
       </div>
     </div>
   );
