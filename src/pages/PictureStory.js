@@ -62,7 +62,7 @@ export default function PictureStory() {
           ) : (
             <p>{description}</p>
           )}
-          <h1 style={{ margin: "20px" }}>LABELS</h1>
+          <h1 style={{ margin: "10px" }}>LABELS</h1>
           {labels ? (
             labels.map((label, index) => (
               <div key={index} style={{ color: "black", margin: "5px" }}>
