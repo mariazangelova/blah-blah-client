@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
-//import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import SpeechRecognition from "react-speech-recognition";
 import { storeStory } from "../store/story/actions";
@@ -24,20 +23,15 @@ const Dictaphone = ({
   browserSupportsSpeechRecognition,
 }) => {
   const dispatch = useDispatch();
-  const [newStory, setStory] = useState(true);
   if (!browserSupportsSpeechRecognition) {
     return null;
   }
-  if (newStory === true) {
-    startListening();
-  }
+  startListening();
   const stopRecording = () => {
-    setStory(false);
     const story = finalTranscript;
     resetTranscript();
     stopListening();
     dispatch(storeStory(story));
-    //console.log("STORY", story);
   };
   return (
     <div className="center">
