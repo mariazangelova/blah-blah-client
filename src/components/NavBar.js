@@ -10,17 +10,17 @@ export default function NavBar() {
           HELLO
         </NavLink>
       </div>
-      <div>
+      {/* <div>
         <NavLink to="/how-to">HOW TO</NavLink>
-      </div>
-      <div>
+      </div> */}
+      {/* <div>
         <NavLink to="/story-word">WORD</NavLink>
       </div>
       <div>
         <NavLink to="/story-picture">PICTURE</NavLink>
-      </div>
+      </div> */}
       <div>
-        <NavLink to="/upload-picture">UPLOAD</NavLink>
+        <NavLink to="/play">PLAY</NavLink>
       </div>
       <div>
         <NavLink to="/review">REVIEW</NavLink>

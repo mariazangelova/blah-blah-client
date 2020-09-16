@@ -20,11 +20,11 @@ function App() {
       <NavBar />
 
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={HowTo} />
         <Route path="/how-to" component={HowTo} />
-        <Route path="/story-word" component={WordStory} />
-        <Route path="/story-picture" component={PictureStory} />
-        <Route path="/upload-picture" component={UploadPicture} />
+        {/* <Route path="/story-word" component={WordStory} />
+        <Route path="/story-picture" component={PictureStory} /> */}
+        <Route path="/play" component={UploadPicture} />
         <Route path="/review" component={Review} />
       </Switch>
       <div style={{ height: "125px" }}>

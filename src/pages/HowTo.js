@@ -25,17 +25,17 @@ export default function HowTo() {
 
       <div className="cube">
         <div className="tab-content">
-          <h1>DEFINITION OR DESCRIPTION</h1>
+          <h1>HINTS</h1>
           <p>I am here to help.</p>
         </div>
         <div className="tab-content">
-          <h1 style={{ margin: "30px" }}>HOW TO BLAH BLAH CUBE</h1>
-          <p>Click on WORD, PICTURE or UPLOAD on the left.</p>
-          <p>A random word or picture will then appear.</p>
-          <p>Take a moment to think about it.</p>
-          <p>If you need help, click on the green hint box.</p>
-          <p>When ready, click on the START RECORDING button.</p>
-          <p>See your words in the pink recording box.</p>
+          <h1 style={{ margin: "30px" }}>WELCOME TO BLAH BLAH CUBE</h1>
+          <p>Here you can play with Google Vision AI.</p>
+          <p>Upload a photo and try to guess</p>
+          <p>what labels would Google give it.</p>
+          <p>The top green box can give you hints.</p>
+          <p>On the pink box your words will be transcribed.</p>
+          <p>To start click on PLAY on the left.</p>
         </div>
         <div className="tab-content">
           <h1>RECORDING</h1>

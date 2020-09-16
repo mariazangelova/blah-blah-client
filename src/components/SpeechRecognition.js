@@ -18,19 +18,19 @@ const Dictaphone = ({
   transcript,
   resetTranscript,
   finalTranscript,
-  startListening,
-  stopListening,
+  // startListening,
+  // stopListening,
   browserSupportsSpeechRecognition,
 }) => {
   const dispatch = useDispatch();
   if (!browserSupportsSpeechRecognition) {
     return null;
   }
-  startListening();
+  // startListening();
   const stopRecording = () => {
     const story = finalTranscript;
     resetTranscript();
-    stopListening();
+    // stopListening();
     dispatch(storeStory(story));
   };
   return (
