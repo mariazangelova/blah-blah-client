@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
-import HomePage from "./pages/HomePage";
 import NavBar from "./components/NavBar";
-import WordStory from "./pages/WordStory";
-import PictureStory from "./pages/PictureStory";
+// import WordStory from "./pages/WordStory";
+// import HomePage from "./pages/HomePage";
+// import PictureStory from "./pages/PictureStory";
 import UploadPicture from "./pages/UploadPicture";
 import Chat from "./components/Chat";
 import chatbot from "./chatbot.png";
